@@ -10,18 +10,19 @@ public class ShieldBooster {
     private float boost; 
     private int uses;
     
-    public ShieldBooster(String name, float boost, int uses){
+    ShieldBooster(String name, float boost, int uses){
         this.name=name;
         this.boost=boost;
         this.uses=uses;
     }
     
-    public ShieldBooster(ShieldBooster booster){
+    ShieldBooster(ShieldBooster booster){
         this.name=booster.name;
         this.boost=booster.boost;
         this.uses=booster.uses;
     }
     
+    ShieldToUI getUIversion(){return new ShieldToUI(this);}
     public float getBoost(){return boost;}
     public int getUses(){return uses;}
     
@@ -32,5 +33,10 @@ public class ShieldBooster {
         }
         
         return 1.0f;
+    }
+    
+    @Override
+    public String toString(){
+        return "\tNombre: "+name+"\tPotencia: " +boost + "\tNúmero de usos de que dispone:" +uses;
     }
 }

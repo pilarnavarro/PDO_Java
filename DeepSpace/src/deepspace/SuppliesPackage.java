@@ -10,13 +10,13 @@ public class SuppliesPackage {
     private float fuelUnits;
     private float shieldPower;
     
-    public SuppliesPackage(float ammo_power, float fuel_units, float shield_power){
+    SuppliesPackage(float ammo_power, float fuel_units, float shield_power){
         this.ammoPower=ammo_power;
         this.fuelUnits=fuel_units;
         this.shieldPower=shield_power;
     }
     
-    public SuppliesPackage(SuppliesPackage p){
+    SuppliesPackage(SuppliesPackage p){
         ammoPower=p.ammoPower;
         fuelUnits=p.fuelUnits;
         shieldPower=p.shieldPower;
@@ -26,5 +26,10 @@ public class SuppliesPackage {
     public float getAmmoPower(){return ammoPower;}
     public float getFuelUnits(){return fuelUnits;}
     public float getShieldPower(){return shieldPower;}
-    
+   
+    @Override
+    public String toString(){
+        return "\tPotencia de armamento: " +ammoPower
+        + " \tCombustible: " +fuelUnits+"\tEnergía para los escudos "+shieldPower;
+    }
 }

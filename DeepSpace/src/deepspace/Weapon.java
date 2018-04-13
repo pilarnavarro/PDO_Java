@@ -14,16 +14,20 @@ public class Weapon {
     private WeaponType type;
     private int uses;
     
-    public Weapon(String n,WeaponType t,int u){
+    Weapon(String n,WeaponType t,int u){
         name=n;
         type=t;
         uses=u;
     }
-    public Weapon(Weapon weapon){
+    
+    Weapon(Weapon weapon){
         name=weapon.name;
         type=weapon.type;
         uses=weapon.uses;
     }
+    
+    WeaponToUI getUIversion(){return new WeaponToUI(this);}
+   
     public String getName(){
         return name;
     }
@@ -43,6 +47,11 @@ public class Weapon {
         }else{
             return 1.0f;
         }
+    }
+    
+    @Override
+    public String toString(){
+        return "\tNombre: "+name+"\tTipo de arma: " +type + "\tNúmero de usos de que dispone:" +uses;
     }
     
 }

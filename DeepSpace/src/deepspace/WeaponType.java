@@ -25,4 +25,16 @@ public enum WeaponType {
     public float getPower(){
         return power;
     }
+    @Override
+    public String toString(){
+        String mensaje="\t";
+        if (getPower()==2.0)
+           mensaje+="LASER";
+        else if (getPower()== 3.0)
+            mensaje += "MISSILE";
+        else if (getPower()== 4.0)
+            mensaje += "PLASMA";
+        mensaje += "\tPotencia: "+power+"\n";
+        return mensaje;
+    }
 }

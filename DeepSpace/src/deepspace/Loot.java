@@ -12,7 +12,7 @@ public class Loot {
     private int nHangars;
     private int nMedals;
     
-    public Loot(int supplies, int weapons, int shields, int hangars, int medals){
+    Loot(int supplies, int weapons, int shields, int hangars, int medals){
         this.nSupplies=supplies;
         this.nWeapons=weapons;
         this.nShields=shields;
@@ -20,10 +20,20 @@ public class Loot {
         this.nMedals=medals;
     }
     
+    LootToUI getUIversion(){return new LootToUI(this);}
+   
     public int getNSupplies(){return nSupplies;}
     public int getNWeapons(){return nWeapons;}
     public int getNShields(){return nShields;}
     public int getNHangars(){return nHangars;}
     public int getNMedals(){return nMedals;}
+    
+    @Override
+    public String toString(){
+        return "\t"+nSupplies + " suministros, " + nWeapons + " armas, " + nShields + 
+        " potenciadores de escudo, " + nHangars + " hangares, " + nMedals + " medallas"; 
+    }
+        
+    
    
 }

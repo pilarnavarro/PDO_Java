@@ -5,20 +5,16 @@ import java.util.Random;
  *
  * @author Pilar y Silvia
  */
-public class Dice {
+public class Dice{
     
     private Random generator;
-    private final float NHANGARSPROB;
-    private final float NSHIELDSPROB;
-    private final float NWEAPONSPROB;
-    private final float FIRSTSHOTPROB;
+    private final float NHANGARSPROB=0.25f;
+    private final float NSHIELDSPROB=0.25f;
+    private final float NWEAPONSPROB=0.33f;
+    private final float FIRSTSHOTPROB=0.5f;
     
     Dice(){
         generator=new Random();
-        NHANGARSPROB=0.25f;
-        NSHIELDSPROB=0.25f;
-        NWEAPONSPROB=0.33f;
-        FIRSTSHOTPROB=0.5f;
     }
     
     public int initWithNHangars(){
